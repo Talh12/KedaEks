@@ -2,6 +2,10 @@
 
 This project demonstrates the deployment of an AWS EKS (Elastic Kubernetes Service) cluster using Terraform. The deployment is fully automated with a single `terraform apply` command. After the infrastructure is set up, KEDA (Kubernetes Event-Driven Autoscaling) is used to scale the pods of an NGINX deployment based on HTTP requests rather than CPU usage.
 
+## Why Use HTTP Requests Instead of CPU Usage?
+
+The reason it's better to use HTTP requests is that they provide a more precise metric for measuring the performance and load of web applications. While CPU usage indicates how much processing power is being used, it doesn't necessarily reflect how efficiently your application is handling incoming requests. Monitoring HTTP requests allows you to gauge the actual workload your application is experiencing and how well it is responding to user interactions.
+
 ## Project Architecture
 
 ![](images/diagram.png)
